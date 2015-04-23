@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div ms-controller="watch_test">
+        <p>{{prop}}</p>
+        <p>{{prop_next}}</p>
+        <button ms-click="click">click</button>
+    </div>
+    <script type="text/javascript" src='../../../js/avalon.min.js'></script>
+    <script type="text/javascript">
+    var model = avalon.define({
+        $id: 'watch_test',
+        prop: 'xxx',
+        prop_next: 'yyy',
+        click: function() {
+            model.prop = new Date - 1;
+        }
+    });
+    model.$watch('prop', function(a) {
+        model.prop_next = a + "$watch";
+    });
+    </script>
+</body>
+
+</html>

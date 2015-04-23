@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>data source management list</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src='../../../js/avalon.min.js'></script>
+    <script type="text/javascript" src='../js/data-source-manage-list.js'></script>
+</head>
+
+<body ms-controller="test">
+    <ul>
+        <li ms-repeat="array">
+            <!-- {{$index}}fsa
+            <button type="button" ms-click="editdbsource()">编辑</button>
+            <button type="button" ms-click="removeRemote($index, $remove)">删除</button> -->
+            {{$index}}
+        </li>
+    </ul>
+</body>
+
+</html>

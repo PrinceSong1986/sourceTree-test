@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>data source management list</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/db-source-list.css">
+
+</head>
+
+<body ms-controller="test">
+    <!-- <ul>
+        <li>
+            <span>序号</span>
+            <span>数据源名称</span>
+            <span>操作按钮</span>
+        </li>
+        <li ms-repeat="dbname">
+            {{$index}}{{el}}
+            <button type="button" ms-click="editdbsource()">编辑</button>
+            <button type="button" ms-click="removeRemote($index, $remove)">删除</button>
+        </li>
+    </ul> -->
+    <table class="db-source-list" width="1000">
+        <tr class="list-caption">
+            <th width="5%">序号</th>
+            <th width="70%">数据源名称</th>
+            <th width="25%">操作按钮</th>
+        </tr>
+        <tr class="list-con" ms-repeat="dbname">
+            <td>{{$index+1}}</td>
+            <td>{{el.name}}</td>
+            <td>
+                <span class="edit" ms-click="editdbsource(el)">编辑</span>
+                <span class="del" ms-click="delDBSource(el,$remove)">删除</span>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src='../../../js/avalon.min.js'></script>
+    <script type="text/javascript" src='../js/data-source-manage-list.js'></script>
+</body>
+
+</html>
